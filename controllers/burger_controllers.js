@@ -18,7 +18,7 @@ router.post("/home/create", function(req, res) {
         console.log(data);
         console.log("Burger Added");
         //refreshes the page to show new burger
-        res.redirect("/home");
+        res.redirect("/");
     });
 });
 

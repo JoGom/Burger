@@ -1,0 +1,40 @@
+<h1>Cats!</h1>
+
+<h2>Burgers Available</h2>
+
+<ul>
+  {{#each burgers}}
+    {{#unless this.devoured}}
+        <span>
+        <h3>{{this.id}}. {{this.burger_name}}</h3>
+        <button class="change-sleep" value={{this.id}}>
+		    {{#if this.devour}}Delete{{else}}Devour it!{{/if}}
+	    </button>
+        </span>
+    {{/unless}}
+  {{/each}}
+</ul>
+
+<h2>Devoured Burgers</h2>
+
+<ul>
+  {{#each burgers}}
+    {{#if this.devoured}}
+        <span>
+        <h3>{{this.id}}. {{this.burger_name}}</h3>
+        </span>
+    {{/if}}
+  {{/each}}
+</ul>
+
+<h2>Add a Burger</h2>
+<div class="container">
+	<div class="row">
+		<div class="col-xs-12 text-center enter_section">
+			<form action="/home/create" method="POST">
+				<input type="text" class="form-control" name="name">
+				<button type="submit" class="btn btn-primary">Submit</button>
+			</form>
+		</div>
+	</div>
+</div>
