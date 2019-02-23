@@ -5,12 +5,10 @@
 <ul>
   {{#each burgers}}
     {{#unless this.devoured}}
-        <span>
         <h3>{{this.id}}. {{this.burger_name}}</h3>
-        <button class="change-sleep" value={{this.id}}>
+        <button class="devour-button" data-id="{{this.id}}" >
 		    {{#if this.devour}}Delete{{else}}Devour it!{{/if}}
 	    </button>
-        </span>
     {{/unless}}
   {{/each}}
 </ul>
